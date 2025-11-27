@@ -41,8 +41,17 @@ if st.button("Generate Viral Script"):
                 
             except Exception as e:
                 st.error(f"Error: {e}")
-
+st.write("---")
+st.write("### 🛠 Debug: Available Models")
+if st.button("List My Models"):
+    try:
+        for m in genai.list_models():
+            if 'generateContent' in m.supported_generation_methods:
+                st.code(m.name)
+    except Exception as e:
+        st.error(e)
 # 6. Viral Loop (Free Marketing)
 st.markdown("---")
 
 st.caption("Built for free. Share this tool with a creator friend!")
+
