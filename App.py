@@ -30,7 +30,7 @@ if st.button("Generate Viral Script"):
         with st.spinner('Cooking up something viral...'):
             try:
                 # Call Gemini
-                model = genai.GenerativeModel('gemini-1.5-pro')
+                model = genai.GenerativeModel('gemini-2.5-pro')
                 full_prompt = f"{SYSTEM_PROMPT}\n\nUSER TOPIC: {topic}\nTONE: {tone}"
                 response = model.generate_content(full_prompt)
                 
@@ -54,4 +54,5 @@ if st.button("List My Models"):
 st.markdown("---")
 
 st.caption("Built for free. Share this tool with a creator friend!")
+
 
